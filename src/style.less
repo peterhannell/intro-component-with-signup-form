@@ -1,0 +1,211 @@
+@bg-primary: hsl(0, 100%, 74%);
+@btn-primary: hsl(154, 59%, 51%);
+@btn-primary-hover: hsla(154, 59%, 51%, 0.8);
+@blue-accent: hsl(248, 32%, 49%);
+@blue-neutral-200: hsl(246, 25%, 77%);
+@blue-neutral-700: hsl(249, 10%, 26%);
+
+@font-face: "Poppins", sans-serif;
+@fs-sm: 0.7rem;
+@fs-reg: 1rem;
+@fs-heading: clamp(1.5rem, 8vw - 2rem, 3rem);
+@fw-700: 700;
+@fw-600: 600;
+@fw-500: 500;
+@fw-400: 400;
+
+@container-width: ~"min(100% - 3.125rem, 69.375rem)";
+@cta-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+  rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+@form-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+@border-lg: 0.7rem;
+@border-sm: 0.3rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1 {
+  font-size: @fs-heading;
+  font-weight: @fw-700;
+}
+
+h3 {
+  font-size: @fs-reg;
+  font-weight: @fw-500;
+  margin-block: 1.3rem 4rem;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  border: 1px solid hsla(249, 10%, 26%, 0.2);
+  border-radius: @border-sm;
+  font-family: inherit;
+  padding: 1.2em 0 1em 1em;
+  width: 100%;
+}
+
+body {
+  background-color: @bg-primary;
+  background-image: url("../images/bg-intro-mobile.png");
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: @font-face;
+  height: 100vh;
+  line-height: 1.5;
+  position: relative;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-flow: column;
+  padding-block: 5.5em 1.2em;
+  place-items: center;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 20.313rem;
+  &__cta {
+    background-color: @blue-accent;
+    border-radius: @border-lg;
+    box-shadow: @cta-shadow;
+    padding: 1.2em 3.7em;
+    margin-block-end: 1.4rem;
+    span {
+      font-weight: @fw-600;
+    }
+  }
+  &__form {
+    background-color: white;
+    border-radius: @border-lg;
+    box-shadow: @form-shadow;
+    padding: 1.5em;
+    div {
+      position: relative;
+      .error-icon {
+        position: absolute;
+        right: 5%;
+        top: 25%;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+    }
+    .error-message {
+      color: @bg-primary;
+      display: block;
+      font-size: @fs-sm;
+      padding-block: 0.5em;
+      text-align: end;
+      font-style: italic;
+    }
+    p {
+      color: @blue-neutral-200;
+      font-size: @fs-sm;
+      margin-inline: auto;
+      width: 85%;
+      span {
+        color: @bg-primary;
+        font-weight: @fw-700;
+      }
+    }
+  }
+  .form__button {
+    background-color: @btn-primary;
+    border: none;
+    border-radius: @border-sm;
+    color: white;
+    cursor: pointer;
+    font-weight: @fw-600;
+    margin-block-end: 0.8em;
+    padding: 1.3em 3.7em;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: @btn-primary-hover;
+    }
+  }
+}
+
+footer {
+  background: rgb(28, 28, 28);
+  background: linear-gradient(
+    135deg,
+    rgba(28, 28, 28, 1) 0%,
+    rgba(31, 41, 55, 1) 46%,
+    rgba(39, 53, 73, 1) 100%
+  );
+  // border-radius: 4px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  opacity: 0.85;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  // max-width: 74.6rem;
+  .attribution a {
+    color: @bg-primary;
+    text-decoration: none;
+    transition: 0.25s ease;
+    &:hover {
+      color: hsl(0, 90%, 70%);
+    }
+  }
+}
+
+.border-red {
+  border: 1px solid @bg-primary;
+}
+
+@media screen and (min-width: 62.5em) {
+  body {
+    background-image: url("../images/bg-intro-desktop.png");
+  }
+  main {
+    height: 100%;
+  }
+  .component {
+    column-gap: 4.375em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 69.375rem;
+    place-items: center;
+  }
+
+  .component__header {
+    text-align: start;
+  }
+  footer {
+    padding: 1.4rem;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.1rem;
+  }
+}
