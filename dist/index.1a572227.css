@@ -153,6 +153,9 @@ footer .attribution a:hover {
   main {
     height: 100%;
   }
+  h1 {
+    line-height: 1.2;
+  }
   .component {
     max-width: 69.375rem;
     grid-template-columns: 1fr 1fr;
