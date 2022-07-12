@@ -152,19 +152,21 @@ footer .attribution a:hover {
   }
   main {
     height: 100%;
+    padding: unset;
   }
   h1 {
     line-height: 1.2;
   }
   .component {
     max-width: 69.375rem;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-    column-gap: 4.375em;
     display: grid;
+    grid-template-columns: 1fr 48.6%;
   }
   .component__header {
     text-align: start;
+  }
+  .component__form {
+    padding: 2.2em;
   }
   footer {
     padding: 1.4rem;
